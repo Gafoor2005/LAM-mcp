@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "browser-automation": {
+      "command": "uv",
+      "args": ["run", "python", "-m", "browser_mcp_server.server"],
+      "env": {
+        "BROWSER_HEADLESS": "true",
+        "BROWSER_TYPE": "chrome",
+        "BROWSER_TIMEOUT": "30"
+      }
+    }
+  }
+}

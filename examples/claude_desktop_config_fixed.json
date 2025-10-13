@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "browser-automation": {
+      "command": "C:/Users/Gafoor/Desktop/LAM-mcp/.venv/Scripts/python.exe",
+      "args": ["-m", "browser_mcp_server.server"],
+      "cwd": "C:/Users/Gafoor/Desktop/LAM-mcp",
+      "env": {
+        "BROWSER_HEADLESS": "true",
+        "BROWSER_TYPE": "chrome",
+        "BROWSER_TIMEOUT": "30"
+      }
+    }
+  }
+}
