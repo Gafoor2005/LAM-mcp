@@ -1,10 +1,18 @@
-# Browser Automation MCP Server
+# Browser Automation MCP Server with Session Context
 
-A Model Context Protocol (MCP) server that provides browser automation capabilities using Selenium WebDriver. This server enables AI assistants to interact with web pages through a standardized interface.
+A Model Context Protocol (MCP) server that provides intelligent browser automation with **session-based context analysis**. This server enables AI assistants to interact with web pages and **make smart decisions** based on page analysis and surrounding context.
 
-## Features
+## ✨ Key Features
 
-### Core Browser Automation
+### 🧠 Session-Based Context Intelligence
+- **Smart Element Identification**: Analyzes page structure to find the right elements for your task
+- **Context-Aware Suggestions**: Recommends elements based on labels, nearby text, and relevance
+- **Semantic Search**: Find relevant page sections using natural language queries
+- **Progress Tracking**: Monitor actions and success rates during the session
+- **Ephemeral Memory**: Session-only storage that clears when done (no persistent learning)
+- **Relevance Scoring**: Elements ranked by confidence based on context analysis
+
+### 🌐 Core Browser Automation
 - **Web Navigation**: Navigate to URLs, handle redirects, and manage browser history
 - **Element Interaction**: Click buttons, links, and other interactive elements
 - **Text Input**: Type into form fields, search boxes, and text areas
@@ -12,7 +20,7 @@ A Model Context Protocol (MCP) server that provides browser automation capabilit
 - **Screenshot Capture**: Take full-page or element-specific screenshots
 - **JavaScript Execution**: Run custom JavaScript code in the browser context
 
-### Advanced Capabilities
+### 🚀 Advanced Capabilities
 - **Form Handling**: Automatically fill out complex web forms
 - **Cookie Management**: Get, set, and manage browser cookies
 - **Session Persistence**: Maintain browser sessions across operations
@@ -20,17 +28,23 @@ A Model Context Protocol (MCP) server that provides browser automation capabilit
 - **Headless/Headed Modes**: Run browsers with or without GUI
 - **Element Waiting**: Smart waiting for dynamic content and AJAX loads
 
-## Installation
+## 📦 Installation
 
 1. **Install Dependencies**:
    ```bash
-   uv add mcp selenium webdriver-manager pillow beautifulsoup4
+   pip install -e .
+   # or
+   uv add mcp selenium webdriver-manager pillow beautifulsoup4 chromadb sentence-transformers
    ```
 
-2. **Install Browser Drivers** (handled automatically by webdriver-manager):
+2. **Browser Drivers** (handled automatically by webdriver-manager):
    - Chrome/Chromium driver
    - Firefox GeckoDriver  
    - Edge WebDriver
+
+3. **Context Analysis Dependencies**:
+   - ChromaDB for in-memory vector storage
+   - sentence-transformers for semantic embeddings (all-MiniLM-L6-v2)
 
 ## Usage
 
@@ -65,9 +79,18 @@ Add to your `claude_desktop_config.json`:
 
 ## Available Tools
 
+### 🧠 Session Context Intelligence Tools
+- **`analyze_current_page`**: Analyze page structure and store in session context
+- **`find_page_context`**: Find relevant page sections for your task using semantic search
+- **`get_smart_element_selector`**: Get elements with surrounding context for better identification
+- **`track_action_result`**: Track actions and success/failure in current session
+- **`get_session_progress`**: View session statistics, actions taken, and success rate
+- **`clear_session_context`**: Clear session memory and start fresh
+
 ### Navigation & Page Control
 - **`navigate_to_url`**: Navigate to a specific URL
 - **`get_page_source`**: Get the full HTML source of the current page
+- **`get_rendered_html`**: Get dynamically rendered HTML (after JavaScript)
 - **`get_current_url`**: Get the current page URL
 - **`refresh_page`**: Refresh the current page
 - **`go_back`**: Navigate back in browser history
