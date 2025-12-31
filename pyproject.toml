@@ -1,9 +1,9 @@
 [project]
 name = "browser-automation-mcp"
-version = "0.1.0"
+version = "1.0.0"
 description = "MCP server for browser automation using Selenium WebDriver"
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "Mohammad Abdul Gafoor", email = "thedeveloper.gg@gmail.com"}
 ]
 dependencies = [
     "mcp>=1.2.0",
